@@ -14,6 +14,8 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  raise TriangleError, "Side can't be 0 or negative." if (a <= 0 || b <= 0 || c <= 0)
+  raise TriangleError, "The sum of two sides cannot be less than the 3rd side." if ((a + b) <= c || (a + c) <= b || (b + c) <= a)
   if a == b && b == c && a == c 
     :equilateral
   elsif a == b || b == c || a == c
